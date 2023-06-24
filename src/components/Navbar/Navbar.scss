@@ -1,0 +1,48 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 57px;
+
+  &__actions {
+    display: flex;
+    column-gap: 8px;
+  }
+
+  &__menu {
+    max-width: 752px;
+    display: flex;
+    overflow-x: scroll;
+    column-gap: 40px;
+    padding-bottom: 14px;
+
+    &__item {
+    }
+
+    &__link {
+      white-space: nowrap;
+      line-height: 24px;
+      letter-spacing: 0.44px;
+      color: #d2d1d1;
+    }
+  }
+
+  &__menu::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &__menu::-webkit-scrollbar-track {
+    background: #d2d1d1;
+    border: 8px solid transparent;
+    background-clip: content-box;
+  }
+
+  &__menu::-webkit-scrollbar-thumb {
+    width: 24px;
+    background: #54d3c2;
+    border: 6px solid white;
+    border-radius: 15px;
+  }
+}
