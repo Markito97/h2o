@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-left: 37px;
 
   &__wrapper {
     display: flex;
@@ -15,9 +16,11 @@
     font-weight: 700;
     line-height: 24px;
     letter-spacing: 0.44px;
+    white-space: nowrap;
   }
 
   &__post {
+    white-space: nowrap;
     color: #989fa3;
     font-size: 14px;
     font-weight: 600;

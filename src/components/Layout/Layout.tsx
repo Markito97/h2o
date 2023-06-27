@@ -1,6 +1,6 @@
 import { Box, styled } from "@mui/material";
-import { Sidebar } from "./Sidebar/Sidebar";
-import { Navbar } from "./Navbar/Navbar";
+import { Sidebar } from "../Sidebar/Sidebar";
+import { Navbar } from "../Navbar/Navbar";
 import { Outlet } from "react-router-dom";
 
 export const Layout = () => {
@@ -9,7 +9,9 @@ export const Layout = () => {
       <Sidebar />
       <MainWrapper component="main">
         <Navbar />
-        <Outlet />
+        <div style={{ height: "calc(100vh - 175px)" }}>
+          <Outlet />
+        </div>
       </MainWrapper>
     </Box>
   );
@@ -17,12 +19,10 @@ export const Layout = () => {
 
 const MainWrapper = styled(Box)(({ theme }) => ({
   flexGrow: 1,
-  bgcolor: "background.default",
-  p: 3,
+  zIndex: 1000,
   marginLeft: "127px",
   background: "white",
-  zIndex: 2000,
   height: "100vh",
-  borderTopLeftRadius: "56px",
-  width: "100%",
+  borderRadius: "56px",
+  width: "calc(100vw - 267px)",
 }));

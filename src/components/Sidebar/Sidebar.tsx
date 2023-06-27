@@ -1,12 +1,13 @@
 import { Box, styled } from "@mui/material";
 import { ReactComponent as H2O } from "../../assets/H2O.svg";
-import { ReactComponent as Calender } from "../../assets/Calendar.svg";
+import { ReactComponent as Calendar } from "../../assets/Calendar.svg";
 import { ReactComponent as Questionnaires } from "../../assets/Questionnaires.svg";
 import { ReactComponent as GeneralEmployees } from "../../assets/GeneralEmployees.svg";
 import { ReactComponent as Employees } from "../../assets/Employees.svg";
 import { ReactComponent as Analytics } from "../../assets/Analytics.svg";
 import { ReactComponent as Graphs } from "../../assets/Graphs.svg";
 import { ReactComponent as Settings } from "../../assets/Settings.svg";
+import { Link } from "react-router-dom";
 
 export const Sidebar = () => {
   return (
@@ -36,18 +37,47 @@ export const Sidebar = () => {
             alignItems: "center",
           }}
         >
-          <Calender />
-          <Questionnaires />
-          <GeneralEmployees />
-          <Employees />
-          <Analytics />
-          <Graphs />
-          <Settings />
+          {sidebarLinks.map((link, index) => (
+            <Link key={index} to={link.path}>
+              {link.icon}
+            </Link>
+          ))}
         </Box>
       </Box>
     </SidebarWrapper>
   );
 };
+
+const sidebarLinks = [
+  {
+    path: "calendar",
+    icon: <Calendar />,
+  },
+  {
+    path: "questionnaires",
+    icon: <Questionnaires />,
+  },
+  {
+    path: "general_employees_base",
+    icon: <GeneralEmployees />,
+  },
+  {
+    path: "employees_base",
+    icon: <Employees />,
+  },
+  {
+    path: "analytics",
+    icon: <Analytics />,
+  },
+  {
+    path: "graphs",
+    icon: <Graphs />,
+  },
+  {
+    path: "settings",
+    icon: <Settings />,
+  },
+];
 
 const SidebarWrapper = styled(Box)(({ theme }) => ({
   position: "fixed",

@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-const Settings = () => {
+const Main = () => {
   const navigate = useNavigate();
 
   return (
@@ -9,17 +9,16 @@ const Settings = () => {
       sx={{
         display: "flex",
         justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
       }}
     >
-      <Button
-        variant="contained"
-        color="secondary"
-        onClick={() => navigate("/general_employees_base")}
-      >
+      <h1>Добро пожаловать</h1>
+      <Button onClick={() => navigate("/general_employees_base")}>
         Перейти на вкладку с таблицей
       </Button>
     </Box>
   );
 };
 
-export default Settings;
+export default Main;

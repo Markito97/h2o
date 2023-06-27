@@ -6,8 +6,11 @@ import { ReactComponent as ArrowRight } from "../../assets/ArrowRight.svg";
 
 import "./Navbar.scss";
 import { UserProfile } from "../UserProfile/UserProfile";
+import { useState } from "react";
 
 export const Navbar = () => {
+  const [activeLink, setActiveLink] = useState<null | number>(null);
+
   return (
     <nav className="nav">
       <div className="nav__actions">
@@ -19,9 +22,13 @@ export const Navbar = () => {
         </ScrollBtn>
       </div>
       <ul className="nav__menu">
-        {links.map((link) => (
+        {links.map((link, index) => (
           <li key={link.path} className="nav__menu__item">
-            <Link className="nav__menu__link" to={link.path}>
+            <Link
+              className={activeLink === index ? "nav__menu__link-active" : "nav__menu__link"}
+              to={link.path}
+              onClick={() => setActiveLink(index)}
+            >
               {link.name}
             </Link>
           </li>
@@ -33,13 +40,13 @@ export const Navbar = () => {
 };
 
 const links = [
+  { path: "questionnaires", name: "База анкет сотрудников" },
+  { path: "general_employees_base", name: "Общая база сотрудников" },
+  { path: "employees_base", name: "База сотрудников" },
   {
     path: "calendar",
     name: "Календарь сотрудников",
   },
-  { path: "questionnaires", name: "База анкет сотрудников" },
-  { path: "general_employees_base", name: "Общая база сотрудников" },
-  { path: "employees_base", name: "База сотрудников" },
   { path: "analytics", name: "Аналитка" },
   { path: "graphs", name: "Графики" },
 ];

@@ -1,11 +1,14 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import "./App.scss";
 import { RoutesProvider } from "./routes/router";
+import "./App.scss";
+import { ThemeProvider } from "@mui/material";
+import { theme } from "./theme";
 
 function App() {
-  return <RoutesProvider />;
+  return (
+    <ThemeProvider theme={theme}>
+      <RoutesProvider />
+    </ThemeProvider>
+  );
 }
 
 export default App;
