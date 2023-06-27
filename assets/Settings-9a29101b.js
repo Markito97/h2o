@@ -1,0 +1,1 @@
+import{u as s,j as e,B as n}from"./index-79f8452a.js";import{B as a}from"./Button-b6932f11.js";const i=()=>{const t=s();return e.jsx(n,{sx:{display:"flex",justifyContent:"center"},children:e.jsx(a,{variant:"contained",color:"secondary",onClick:()=>t("/general_employees_base"),children:"Перейти на вкладку с таблицей"})})};export{i as default};
